@@ -5,7 +5,11 @@ import Collection from '@ckeditor/ckeditor5-utils/src/collection';
 import { createDropdown, addListToDropdown } from '@ckeditor/ckeditor5-ui/src/dropdown/utils';
 import { normalizeOptions } from './utils';
 
-import lineHeightIcon from '../theme/line-height.svg';
+import lineHeightIcon from '../theme/icons/line-height.svg';
+
+const icons = new Map( [
+  [ 'default', lineHeightIcon ],
+] );
 
 export default class LineHeightUI extends Plugin {
 	/**
@@ -27,7 +31,7 @@ export default class LineHeightUI extends Plugin {
 			// Create dropdown model.
 			dropdownView.buttonView.set({
 				label: t('Line Height'),
-				icon: lineHeightIcon,
+				icon: icons.get( 'default' ),
 				tooltip: true
 			});
 
